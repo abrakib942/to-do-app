@@ -10,7 +10,7 @@ const AddTask = () => {
   //   const [task, getTask] = useState([]);
 
   //   useEffect(() => {
-  //     fetch("http://localhost:5000/task")
+  //     fetch("https://fast-scrubland-31177.herokuapp.com/task")
   //       .then((res) => res.json())
   //       .then((data) => getTask(data));
   //   });
@@ -22,7 +22,7 @@ const AddTask = () => {
 
     const task = { name, description };
 
-    fetch("http://localhost:5000/task", {
+    fetch("https://fast-scrubland-31177.herokuapp.com/task", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -65,7 +65,7 @@ const AddTask = () => {
       </form>
       <Link
         to="/tasks"
-        class="btn btn-outline btn-primary w-96 flex flex-row mx-auto mb-4"
+        className="btn btn-outline btn-primary w-96 flex flex-row mx-auto mb-4"
       >
         Show Tasks
       </Link>

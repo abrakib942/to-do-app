@@ -6,7 +6,7 @@ const TaskDetails = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/task`)
+    fetch(`https://fast-scrubland-31177.herokuapp.com/task`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);

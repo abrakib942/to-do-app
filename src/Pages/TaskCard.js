@@ -8,7 +8,7 @@ const TaskCard = ({ task }) => {
     const proceed = window.confirm("You want to delete. Are you sure?");
 
     if (proceed) {
-      const url = `http://localhost:5000/task/${id}`;
+      const url = `https://fast-scrubland-31177.herokuapp.com/task/${id}`;
 
       fetch(url, {
         method: "DELETE",
@@ -24,14 +24,14 @@ const TaskCard = ({ task }) => {
 
   return (
     <div>
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">{name}</h2>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
           <p>{description}</p>
-          <div class="card-actions justify-end">
+          <div className="card-actions justify-end">
             <button
               onClick={() => handleDelete(task._id)}
-              class="btn btn-primary"
+              className="btn btn-primary"
             >
               Delete
             </button>

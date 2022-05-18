@@ -7,6 +7,7 @@ import Navbar from "./Pages/Navbar";
 import TaskDetails from "./Pages/TaskDetails";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProtectedRoute from "./Pages/ProtectedRoute";
 
 function App() {
   return (
@@ -14,8 +15,22 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/addTask" element={<AddTask />}></Route>
-        <Route path="/tasks" element={<TaskDetails />}></Route>
+        <Route
+          path="/addTask"
+          element={
+            <ProtectedRoute>
+              <AddTask />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/tasks"
+          element={
+            <ProtectedRoute>
+              <TaskDetails />
+            </ProtectedRoute>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
 
